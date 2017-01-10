@@ -7,6 +7,7 @@ overview:
 writingTheGrailsApp:
   title: Writing the Grails Application
   domainClass: Create a Domain Class - Persistent Entities
+  domainClassTest: Domain Class Unit Testing
   versioning: Versioning
   v1Controller: Create a Controller
   bootstrap: Loading test data

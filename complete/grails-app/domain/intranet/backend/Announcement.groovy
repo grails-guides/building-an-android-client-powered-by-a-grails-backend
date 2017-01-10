@@ -6,6 +6,7 @@ class Announcement {
     String body
     
     static constraints = {
+        title size: 0..255
         body nullable: true
     }
 

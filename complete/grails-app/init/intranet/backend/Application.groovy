@@ -1,4 +1,4 @@
-package building.an.android.client.powered.by.a.grails.backend
+package intranet.backend
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

@@ -11,14 +11,14 @@ The detail activity uses now an asyncTask to fetch a complete announcement.
 [source,java]
 ./app/src/main/java/intranet/client/android/asynctasks/RetrieveAnnouncementTask.java
 ----
-include::{sourcedir}/../complete-android-v2//app/src/main/java/intranet/client/android/asynctasks/RetrieveAnnouncementTask.java[]
+include::{sourcedir}/../complete-android-v2/app/src/main/java/intranet/client/android/asynctasks/RetrieveAnnouncementTask.java[]
 ----
 
 Once we get an announcement we will communicate the response to classes implementing the delegate
 [source,java]
 ./app/src/main/java/intranet/client/android/delegates/RetrieveAnnouncementDelegate.java
 ----
-include::{sourcedir}/../complete-android-v1//app/src/main/java/intranet/client/android/delegates/RetrieveAnnouncementDelegate.java[]
+include::{sourcedir}/../complete-android-v2/app/src/main/java/intranet/client/android/delegates/RetrieveAnnouncementDelegate.java[]
 ----
 
 The Announcement Activity implements the delegate and renders the announcement.
@@ -26,5 +26,5 @@ The Announcement Activity implements the delegate and renders the announcement.
 [source,java]
 ./app/src/main/java/intranet/client/android/activities/AnnouncementActivity.java
 ----
-include::{sourcedir}/../complete-android-v2//app/src/main/java/intranet/client/android/activities/AnnouncementActivity.java[]
+include::{sourcedir}/../complete-android-v2/app/src/main/java/intranet/client/android/activities/AnnouncementActivity.java[]
 ----

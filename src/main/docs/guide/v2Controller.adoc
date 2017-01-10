@@ -7,8 +7,23 @@ query with a projection to fetch only the id and title of the announcements.
 include::{sourceDir}/grails-app/controllers/intranet/backend/v2/AnnouncementController.groovy[]
 ----
 
-<1> this controller will handle v2 of our api
-<2> we want to respond only JSON Payloads
+We encapsulate the querying in a service
+
+[source,groovy]
+.grails-app/services/intranet/backend/AnnouncementService.groovy
+----
+include::{sourceDir}/grails-app/services/intranet/backend/AnnouncementService.groovy[]
+----
+
+and we test it:
+
+[source,groovy]
+./src/test/groovy/intranet/backend/AnnouncementServiceSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/intranet/backend/AnnouncementServiceSpec.groovy[]
+
+
+----
 
 ### Url Mapping
 

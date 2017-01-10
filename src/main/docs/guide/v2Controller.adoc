@@ -1,0 +1,20 @@
+We are going to use create Controller to handle the version 2 of the API. We are going to use a Criteria
+query with a projection to fetch only the id and title of the announcements.
+
+[source,groovy]
+.grails-app/controllers/intranet/backend/v2/AnnouncementController.groovy
+----
+include::{sourceDir}/grails-app/controllers/intranet/backend/v2/AnnouncementController.groovy[]
+----
+
+<1> this controller will handle v2 of our api
+<2> we want to respond only JSON Payloads
+
+### Url Mapping
+
+We need to map the version _2.0_ of the Accept-Header to the namespace _v2_
+
+[source,groovy]
+./grails-app/controllers/intranet/backend/UrlMappings.groovy
+----
+include::{sourceDir}/grails-app/controllers/intranet/backend/UrlMappings.groovy[lines="15,16"]

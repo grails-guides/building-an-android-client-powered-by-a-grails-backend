@@ -2,7 +2,23 @@ gettingStarted:
   title: Getting Started
   requirements: What you will need
   howto: How to complete the guide
-writingTheApp:
-  title: Writing the Application
-runningTheApp:
-  title: Running the Application
+overview:
+  title: Overview
+writingTheGrailsApp:
+  title: Writing the Grails Application
+  domainClass: Create a Domain Class - Persistent Entities
+  versioning: Versioning
+  v1Controller: Create a Controller
+  bootstrap: Loading test data
+  runningTheApp: Running the Application
+writingTheAndroidApp:
+    title: Writing the Android Application
+    androidOverview: Fetching the Announcements
+    networkingCode: Networking code
+    detailActivity: Detail Activity
+version2:
+    title: API version 2.0
+    v2Controller: Grails V2 Changes
+    v2Android: Android V2 Changes
+conclusion:
+    title: Conclusion

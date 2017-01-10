@@ -11,6 +11,7 @@ writingTheGrailsApp:
   versioning: Versioning
   v1Controller: Create a Controller
   bootstrap: Loading test data
+  v1FunctionalTests: Functional tests
   runningTheApp: Running the Application
 writingTheAndroidApp:
     title: Writing the Android Application
@@ -20,6 +21,7 @@ writingTheAndroidApp:
 version2:
     title: API version 2.0
     v2Controller: Grails V2 Changes
+    v2FunctionalTests: Api 2.0 Functional tests
     v2Android: Android V2 Changes
 conclusion:
     title: Conclusion

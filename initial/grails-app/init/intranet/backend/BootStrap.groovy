@@ -1,4 +1,4 @@
-package building.an.android.client.powered.by.a.grails.backend
+package intranet.backend
 
 class BootStrap {
 

@@ -61,7 +61,7 @@ dependencies block, the next line:
     compile 'com.google.code.gson:gson:2.8.0'
 ----
 
-We are going to encapsulte the instantiation of OkHttp Request in a class to ensure the Accept-Version Http header is
+We are going to encapsulate the instantiation of OkHttp Request in a class to ensure the Accept-Version Http header is
 always set with the value defined in the _Constants.java_ class
 
 [source,java]

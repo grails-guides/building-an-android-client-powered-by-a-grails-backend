@@ -87,7 +87,7 @@ https://developer.android.com/reference/android/os/AsyncTask.html[AsyncTask]
 include::{sourcedir}/../complete-android-v1//app/src/main/java/intranet/client/android/asynctasks/RetrieveAnnouncementsTask.java[]
 ----
 
-Once we get a list of annocuments ready we will communicate the response to classes implementing the delegate
+Once we get a list of announcements ready we will communicate the response to classes implementing the delegate
 [source,java]
 ./app/src/main/java/intranet/client/android/delegates/RetrieveAnnouncementsDelegate.java
 ----

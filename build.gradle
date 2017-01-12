@@ -7,13 +7,3 @@ asciidoctorj {
 }
 
 apply from:"https://raw.githubusercontent.com/grails/grails-guides/master/gradle/guide-build.gradle"
-
-
-task copyLocalImgResources(type: Copy) {
-    from ('src/main/resources/img') {
-        include '*.png'
-    }
-    into "${buildDir}/resources/grails-guides-master/src/main/resources/img"
-}
-publishGuide.dependsOn copyLocalImgResources
-copyLocalImgResources.mustRunAfter prepareResources

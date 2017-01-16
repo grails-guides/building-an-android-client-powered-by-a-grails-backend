@@ -17,10 +17,10 @@ public class RetrieveAnnouncementTask extends AsyncTask<Long, Void, Announcement
 
     @Override
     protected Announcement doInBackground(Long... ids) {
-            if ( ids != null && ids.length >= 1) {
-                Long announcementId = ids[0];
-                return fetcher.fetchAnnouncement(announcementId);
-            }
+        if ( ids != null && ids.length >= 1) {
+            Long announcementId = ids[0];
+            return fetcher.fetchAnnouncement(announcementId);
+        }
 
         return null;
     }

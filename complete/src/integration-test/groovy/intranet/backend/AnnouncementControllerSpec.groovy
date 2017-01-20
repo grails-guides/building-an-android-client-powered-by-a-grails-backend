@@ -10,15 +10,12 @@ import javax.servlet.http.HttpServletResponse
 @Integration
 class AnnouncementControllerSpec extends Specification {
 
-    @Value('${local.server.port}') // <1>
-    Integer serverPort
-
     def "test body is present in announcements json payload of Api 1.0"() {
         given:
         RestBuilder rest = new RestBuilder()
 
         when: 'Requesting announcements for version 1.0'
-        def resp = rest.get("http://localhost:${serverPort}/announcements/") {
+        def resp = rest.get("http://localhost:${serverPort}/announcements/") { // <1>
             header("Accept-Version", "1.0") // <2>
         }
 

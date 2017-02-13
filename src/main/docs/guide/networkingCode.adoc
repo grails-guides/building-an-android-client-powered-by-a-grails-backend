@@ -7,10 +7,11 @@ We have a class where serveral constants are initialized:
 include::{sourcedir}/../complete-android-v1/app/src/main/java/intranet/client/network/Constants.java[]
 ----
 
-<1> Grails App server url. Please note you may need to change the ip address to match your local machine.
+<1> Grails App server url.
 <2> The path we configured in the Grails app in _UrlMappings.groovy_
 <3> The version of the API
 
+NOTE: You may need to change the ip address to match your local machine.
 
 ### Model
 
@@ -45,10 +46,9 @@ dependencies block, the next line:
 ----
 #### Gson
 
-https://github.com/google/gson[Gson]:
 ____
 
-Gson is a Java library that can be used to convert Java Objects into their JSON
+https://github.com/google/gson[Gson] is a Java library that can be used to convert Java Objects into their JSON
 representation. It can also be used to convert a JSON string to an equivalent
 Java object.
 ____
@@ -87,7 +87,7 @@ https://developer.android.com/reference/android/os/AsyncTask.html[AsyncTask]
 include::{sourcedir}/../complete-android-v1//app/src/main/java/intranet/client/android/asynctasks/RetrieveAnnouncementsTask.java[]
 ----
 
-Once we get a list of announcements ready we will communicate the response to classes implementing the delegate
+Once we get a list of announcements, we will communicate the response to classes implementing the delegate
 [source,java]
 ./app/src/main/java/intranet/client/android/delegates/RetrieveAnnouncementsDelegate.java
 ----
@@ -132,9 +132,3 @@ include::{sourcedir}/../complete-android-v1//app/src/main/java/intranet/client/a
 ----
 include::{sourcedir}/../complete-android-v1/app/src/main/res/layout/item_announcement.xml[]
 ----
-
-
-
-
-
-

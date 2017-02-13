@@ -3,7 +3,7 @@ package intranet.backend.v2
 import grails.rest.RestfulController
 import intranet.backend.Announcement
 
-class AnnouncementController extends RestfulController {
+class AnnouncementController extends RestfulController<Announcement> {
     static namespace = 'v2'
     static responseFormats = ['json']
 

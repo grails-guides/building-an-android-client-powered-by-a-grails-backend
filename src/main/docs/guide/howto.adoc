@@ -1,4 +1,4 @@
-To complete this guide you will need to checkout the source from Github and work through the steps presented by the guide.
+To complete this guide, you will need to checkout the source from Github and work through the steps presented by the guide.
 
 To get started do the following:
 
@@ -8,7 +8,7 @@ To get started do the following:
 
 * `cd` into `{githubSlug}/initial`
 
-Alternatively, if you already have Grails 3.2.4 installed then you can create a new application using the
+Alternatively, if you already have Grails installed then you can create a new application using the
 following command in a Terminal window:
 
     $ grails create-app intranet.backend.grails-app --profile rest-api
@@ -27,7 +27,7 @@ TIP: You can go right to the completed Grails example if you `cd` into `{githubS
 * Head on over to the next section
 
 
-Alternatively, you can create an android app using the New Project wizard of Android Studio as illustrated in
+Alternatively, you can create an android app using the New Project Wizard of Android Studio as illustrated in
 the next screenshots.
 
 image::android-studio-newproject1.png[]

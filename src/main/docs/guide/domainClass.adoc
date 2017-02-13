@@ -1,9 +1,6 @@
 We need to create persistent entities to store company announcements. Grails handles persistence with the use of https://docs.grails.org/latest/ref/Domain%20Classes/Usage.html[Grails Domain Classes]:
-____
-A domain class fulfills the M in the Model View Controller (MVC) pattern and represents a persistent entity that is
-mapped onto an underlying database table. In Grails a domain is a class that lives in the grails-app/domain directory.
-____
 
+include::{commondir}/common-quoteDomainClass.adoc[]
 
 Grails simplifies the creation of domain classes with the http://docs.grails.org/latest/ref/Command%20Line/create-domain-class.html[create-domain-class command].
 [source,bash]
@@ -16,7 +13,7 @@ Total time: 4.53 secs
 | Created src/test/groovy/grails/company/intranet/AnnouncementSpec.groovy
 ----
 
-Just to keep it simple, we assume the company announcements just contain a _title_ and a _html body_.
+Just to keep it simple, we assume the company announcements just contain a _title_ and a _HTML body_.
 We are going to modify the domain class generated in the previous step to store that information.
 
 [source,groovy]

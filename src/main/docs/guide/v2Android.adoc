@@ -6,7 +6,7 @@ First we need to change the api version defined in _Constants.java_
 include::{sourcedir}/../complete-android-v2/app/src/main/java/intranet/client/network/Constants.java[]
 ----
 
-The detail activity uses now an asyncTask to fetch a complete announcement.
+The detail activity uses an asyncTask to fetch a complete announcement.
 
 [source,java]
 ./app/src/main/java/intranet/client/android/asynctasks/RetrieveAnnouncementTask.java

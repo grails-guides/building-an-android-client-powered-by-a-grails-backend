@@ -22,5 +22,6 @@ class BootStrap {
     }
 }
 ----
-Please note, announcements in the previous code snippet don't contain _body_ content
-to keep the code sample small.
+
+NOTE: Announcements in the previous code snippet don't contain _body_ content
+to keep the code sample small. Checkout `grails-app/init/intranet/backend/BootStrap.groovy` to see the complete code.

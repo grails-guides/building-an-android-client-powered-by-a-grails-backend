@@ -9,8 +9,6 @@ endpoint. The next functional test verifies that behaviour.
 include::{sourceDir}/src/integration-test/groovy/intranet/backend/AnnouncementControllerSpec.groovy[indent=0,lines="1..15, 39..60, 99"]
 ----
 
-<1> serverPort is automatically injected. It contains the random port where the grails application runs during the functional test
 <2> Body is not present in the JSON paylod
 
 Grails command _test-app_ runs unit, integration and functional tests.
-

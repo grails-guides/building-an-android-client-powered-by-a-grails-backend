@@ -1,13 +1,12 @@
 package intranet.backend
 
-import grails.test.mixin.TestFor
+import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(Announcement)
-class AnnouncementSpec extends Specification {
+class AnnouncementSpec extends Specification implements DomainUnitTest<Announcement> {
 
     void "test body can be null"() {
         expect:

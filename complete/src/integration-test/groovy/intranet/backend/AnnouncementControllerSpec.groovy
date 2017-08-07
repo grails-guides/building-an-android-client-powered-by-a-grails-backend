@@ -1,7 +1,7 @@
 package intranet.backend
 
 import grails.plugins.rest.client.RestBuilder
-import grails.test.mixin.integration.Integration
+import grails.testing.mixin.integration.Integration
 import org.springframework.beans.factory.annotation.Value
 import spock.lang.Specification
 import javax.servlet.http.HttpServletResponse

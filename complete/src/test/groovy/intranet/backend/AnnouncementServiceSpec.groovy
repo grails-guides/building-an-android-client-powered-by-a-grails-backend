@@ -1,10 +1,9 @@
 package intranet.backend
 
 import grails.test.hibernate.HibernateSpec
-import grails.test.mixin.TestFor
+import grails.testing.services.ServiceUnitTest
 
-@TestFor(AnnouncementService)
-class AnnouncementServiceSpec extends HibernateSpec {
+class AnnouncementServiceSpec extends HibernateSpec implements ServiceUnitTest<AnnouncementService> {
 
     def "test criteria query with projection returns a list of maps"() {
 

@@ -1,32 +1,45 @@
 package intranet.backend
 
-import grails.plugins.rest.client.RestBuilder
 import grails.testing.mixin.integration.Integration
-import org.springframework.beans.factory.annotation.Value
+import grails.testing.spock.OnceBefore
+import grails.web.http.HttpHeaders
+import io.micronaut.http.HttpRequest
+import io.micronaut.http.HttpResponse
+import io.micronaut.http.HttpStatus
+import io.micronaut.http.client.HttpClient
+import spock.lang.AutoCleanup
+import spock.lang.Shared
 import spock.lang.Specification
-import javax.servlet.http.HttpServletResponse
 
 
 @Integration
 class AnnouncementControllerSpec extends Specification {
 
+    @Shared
+    @AutoCleanup
+    HttpClient client
+
+    @OnceBefore
+    void init() {
+        String baseUrl = "http://localhost:$serverPort"
+        this.client  = HttpClient.create(baseUrl.toURL())
+    }
+
     def "test body is present in announcements json payload of Api 1.0"() {
         given:
-        RestBuilder rest = new RestBuilder()
+        HttpRequest request = HttpRequest.GET("/announcements/").header("Accept-Version", "1.0")
 
         when: 'Requesting announcements for version 1.0'
-        def resp = rest.get("http://localhost:${serverPort}/announcements/") { // <1>
-            header("Accept-Version", "1.0") // <2>
-        }
+        HttpResponse<List<Map>> resp = client.toBlocking().exchange(request, List) // <1>
 
         then: 'the request was successful'
-        resp.status == HttpServletResponse.SC_OK // <3>
+        resp.status == HttpStatus.OK // <3>
 
         and: 'the response is a JSON Payload'
-        resp.headers.get('Content-Type') == ['application/json;charset=UTF-8']
+        resp.headers.getFirst(HttpHeaders.CONTENT_TYPE).get() == 'application/json;charset=UTF-8'
 
         and: 'json payload contains an array of annoucements with id, title and body'
-        resp.json.each {
+        resp.body().each {
             assert it.id
             assert it.title
             assert it.body // <4>
@@ -35,21 +48,19 @@ class AnnouncementControllerSpec extends Specification {
 
     def "test body is NOT present in announcements json payload of Api 2.0"() {
         given:
-        RestBuilder rest = new RestBuilder()
+        HttpRequest request = HttpRequest.GET("/announcements/").header("Accept-Version", "2.0")
 
         when: 'Requesting announcements for version 2.0'
-        def resp = rest.get("http://localhost:${serverPort}/announcements/") {
-            header("Accept-Version", "2.0")
-        }
+        HttpResponse<List<Map>> resp = client.toBlocking().exchange(request, List)
 
         then: 'the request was successful'
-        resp.status == HttpServletResponse.SC_OK
+        resp.status == HttpStatus.OK // <3>
 
         and: 'the response is a JSON Payload'
-        resp.headers.get('Content-Type') == ['application/json;charset=UTF-8']
+        resp.headers.getFirst(HttpHeaders.CONTENT_TYPE).get() == 'application/json;charset=UTF-8'
 
         and: 'json payload contains an array of annoucements with id, title'
-        resp.json.each {
+        resp.body().each {
             assert it.id
             assert it.title
             assert !it.body // <2>
@@ -58,39 +69,36 @@ class AnnouncementControllerSpec extends Specification {
 
     def "test detail of an announcement contains body in both version 1.0 and 2.0"() {
         given:
-        RestBuilder rest = new RestBuilder()
-
-        when: 'Requesting announcements for version 1.0'
         def annoucementId = 2 as Long
-        def resp = rest.get("http://localhost:${serverPort}/announcements/${annoucementId}") {
-            header("Accept-Version", "1.0")
-        }
-
-        then: 'the request was successful'
-        resp.status == HttpServletResponse.SC_OK
-
-        and: 'the response is a JSON Payload'
-        resp.headers.get('Content-Type') == ['application/json;charset=UTF-8']
-
-        and: 'json payload contains the complete annoucement'
-        resp.json.id
-        resp.json.title
-        resp.json.body
+        HttpRequest request = HttpRequest.GET("/announcements/${annoucementId}").header("Accept-Version", "1.0")
 
         when: 'Requesting announcements for version 1.0'
-        resp = rest.get("http://localhost:${serverPort}/announcements/${annoucementId}") {
-            header("Accept-Version", "2.0")
-        }
+        HttpResponse<Map> resp = client.toBlocking().exchange(request, Map)
 
         then: 'the request was successful'
-        resp.status == HttpServletResponse.SC_OK
+        resp.status == HttpStatus.OK
 
         and: 'the response is a JSON Payload'
-        resp.headers.get('Content-Type') == ['application/json;charset=UTF-8']
+        resp.headers.getFirst(HttpHeaders.CONTENT_TYPE).get() == 'application/json;charset=UTF-8'
 
         and: 'json payload contains the complete annoucement'
-        resp.json.id
-        resp.json.title
-        resp.json.body
+        resp.body().id
+        resp.body().title
+        resp.body().body
+
+        when: 'Requesting announcements for version 2.0'
+        request = HttpRequest.GET("/announcements/${annoucementId}").header("Accept-Version", "2.0")
+        resp = client.toBlocking().exchange(request, Map)
+
+        then: 'the request was successful'
+        resp.status == HttpStatus.OK
+
+        and: 'the response is a JSON Payload'
+        resp.headers.getFirst(HttpHeaders.CONTENT_TYPE).get() == 'application/json;charset=UTF-8'
+
+        and: 'json payload contains the complete announcement'
+        resp.body().id
+        resp.body().title
+        resp.body().body
     }
 }

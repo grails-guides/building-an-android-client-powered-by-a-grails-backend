@@ -1,14 +1,14 @@
 package intranet.client.android.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 import android.widget.TextView;
 
 import intranet.client.R;
 
-public class AnnouncementActivity extends AppCompatActivity {
+public class AnnouncementActivity extends Activity {
 
     private TextView tvTitle;
     private WebView wvBody;

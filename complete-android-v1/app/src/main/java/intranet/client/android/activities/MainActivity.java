@@ -1,8 +1,8 @@
 package intranet.client.android.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import intranet.client.android.delegates.AnnouncementAdapterDelegate;
 import intranet.client.android.delegates.RetrieveAnnouncementsDelegate;
 import intranet.client.network.model.Announcement;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends Activity
         implements RetrieveAnnouncementsDelegate, AnnouncementAdapterDelegate {
 
     public static final String EXTRA_ID = "id";

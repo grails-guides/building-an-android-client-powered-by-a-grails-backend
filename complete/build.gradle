@@ -59,10 +59,7 @@ dependencies {
     runtime "org.apache.tomcat:tomcat-jdbc"
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "io.micronaut:micronaut-http-client:1.0.4"
-    testCompile "org.grails.plugins:geb"
     testCompile "org.grails:grails-web-testing-support"
-    testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
-    testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
 }
 
 bootRun {
